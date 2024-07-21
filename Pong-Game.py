@@ -171,14 +171,12 @@ def game_over():
 import tkinter as tk
 from ttkbootstrap import ttk
 
-# Initialize the main window
 root = tk.Tk()
 
 
 
 
 
-# Create and pack the game duration label
 game_duration_label = tk.Label(root, text=f"Time left: {time_duration} ")
 game_duration_label.pack()
 
@@ -194,7 +192,6 @@ canvas.pack()
 entry_button_frame = tk.Frame(root)
 entry_button_frame.pack()
 
-# Create and pack the entry and button in the frame
 entry = ttk.Entry(entry_button_frame)
 button1 = ttk.Button(entry_button_frame, text="Button",command=NumberOfMinutes)
 button2 = ttk.Button(entry_button_frame, style="blue-outline" ,cursor="hand2", text="StartGame",command=StartGame)
@@ -206,16 +203,13 @@ button1.pack(side=tk.RIGHT,padx=(0,10))
 
 
 
-# Bind events
 canvas.bind('<ButtonPress-1>', on_button_press)
 canvas.bind('<ButtonRelease-1>', button_release)
 canvas.bind('<B1-Motion>', on_mouse_drag)
 
-# Start the game logic
 squares = [square1, square]
 
 
 
-# Run the main event loop
 root.mainloop()
 
